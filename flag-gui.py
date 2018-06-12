@@ -21,11 +21,6 @@ model.compile(loss='categorical_crossentropy',
               optimizer = opt,
               metrics=['accuracy'])
 
-# Set GUI root
-root = Tk()
-root.geometry('500x200')
-root.title("Flag Recognizer")
-
 # Function to choose flag and predict its class
 def predict():
     root.filename = filedialog.askopenfilename(initialdir = "", title = "Select flag:")
@@ -70,6 +65,9 @@ def plot(predictions):
     plt.show(block = False)
 
 # GUI
+root = Tk()
+root.geometry('500x200')
+root.title("Flag Recognizer")
 font = font.Font(family='tahoma', size='15')
 var = StringVar()
 label = Label( root, textvariable=var, relief=RAISED, bd='0' , height=5, font=font)
